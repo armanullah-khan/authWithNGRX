@@ -1,3 +1,38 @@
-<p>
-  sign-up works!
-</p>
+<div class="row">
+<div class="col-md-4 box">
+<br>
+<h1>Sign up</h1>
+<hr><br>
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()" >
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+    <div class="form-group">
+    <label  >Email:</label>
+      
+      <input type="email" formControlName="email" class="form-control">
+      <div *ngIf="messageForm.controls.email.invalid && !messageForm.controls.email.pristine" class="error">
+        <div>Email is required</div>
+      </div>
+    
+  </div>
+
+  <div class="form-group">
+    <label>
+        Password:</label>
+        <input type="password"  minlength="6" formControlName="password" class="form-control">
+        <div *ngIf="messageForm.controls.password.errors?.required && !messageForm.controls.email.pristine" class="error">
+          <div>Password is required</div>
+        </div>
+        <div *ngIf="messageForm.controls.password.errors?.minlength" class="error">
+            <div>Password must be 6 char</div>
+          </div>
+      
+  </div>
+
+    <input type="submit" value="Submit" [disabled]="messageForm.invalid" class="btn btn-primary">
+  
+  </form>
+
+</div>
+</div>
+  
