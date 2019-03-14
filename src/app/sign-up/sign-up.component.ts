@@ -8,12 +8,12 @@ import { User } from '../models/user';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-
+// 
   submitted = false;
   success = false;
   messageForm: FormGroup;
 
-  // user: User = new User();
+  user: User = new User();
 
   constructor(private formBuilder: FormBuilder) {
     this.messageForm = this.formBuilder.group({
@@ -26,6 +26,7 @@ export class SignUpComponent implements OnInit {
   }
   onSubmit(): void {
     this.submitted = true;
+    console.log(this.user)
     if (this.messageForm.invalid) {
       return;
     }
