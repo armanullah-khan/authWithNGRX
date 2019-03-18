@@ -45,6 +45,11 @@
         <a [routerLink]="['/log-in']">Log in!</a>
       </p>
   </form>
+  <div *ngIf="errorMessage">
+      <div class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+    </div>
 
 </div>
 </div>

@@ -37,7 +37,6 @@
             <div *ngIf="messageForm.controls.password.errors?.minlength" class="error">
                 <div>Password must be 4 char</div>
               </div>
-          
       </div>
     
         <input type="submit" value="Submit" [disabled]="messageForm.invalid" class="btn btn-primary">
@@ -46,6 +45,10 @@
             <a [routerLink]="['/sign-up']">Sign up!</a>
           </p>
       </form>
+      <div *ngIf="errorMessage">
+          <div class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
     
     </div>
     </div>
