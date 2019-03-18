@@ -1,21 +1,21 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 box">
 
-    <h1>Landing Page</h1>
+    <h1 style="text-align:center">Landing Page</h1>
     <hr><br>
 
     <div *ngIf="isAuthenticated; then doSomething;"></div>
     <ng-template #doSomething>
-      <p>You logged in <em>{{user.email}}!</em></p>
+      <p style="text-align:center">You logged in <em>{{user.email}}!</em></p>
       <button class="btn btn-primary" (click)="logOut()">Log out</button>
     </ng-template>
 
 
     <br><br><br>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card box" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Current State</h5>
+        <h5 class="card-title" style="text-align:center">Current State</h5>
         <ul>
           <li><strong>isAuthenticated</strong> - {{isAuthenticated}}</li>
           <li><strong>user.email</strong> - {{ user?.email || 'null'}}</li>

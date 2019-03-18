@@ -15,12 +15,13 @@ export class NavComponent implements OnInit {
   isAuthenticated: false;
 
   appTitle: string = 'AUTHENTICATION WITH NGRX';
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>) {
+    this.getState = this.store.select(selectAuthState);
+   }
 
   ngOnInit() {
     this.getState.subscribe((state) => {
       this.isAuthenticated = state.isAuthenticated;
-
     });
   }
 
