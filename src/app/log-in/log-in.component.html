@@ -27,7 +27,7 @@
             <input 
             [(ngModel)]="user.name"
             type="password"  
-            minlength="6" 
+            minlength="4" 
             formControlName="password" 
             placeholder="Enter a password" 
             class="form-control">
@@ -35,7 +35,7 @@
               <div>Password is required</div>
             </div>
             <div *ngIf="messageForm.controls.password.errors?.minlength" class="error">
-                <div>Password must be 6 char</div>
+                <div>Password must be 4 char</div>
               </div>
           
       </div>

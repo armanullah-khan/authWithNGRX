@@ -12,6 +12,8 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthEffects } from './store/effects/auth.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/app.states';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { EffectsModule } from '@ngrx/effects';
     ReactiveFormsModule,
     HttpClientModule,
     EffectsModule.forRoot([AuthEffects]),
+    StoreModule.forRoot(reducers, {}),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

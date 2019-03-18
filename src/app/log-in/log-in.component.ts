@@ -23,7 +23,7 @@ export class LogInComponent implements OnInit {
     private store: Store<AppState>) {
     this.messageForm = this.formBuilder.group({
       email: ['',[Validators.email,Validators.required]],
-      password: ['',[Validators.required,Validators.minLength(6)]],
+      password: ['',[Validators.required,Validators.minLength(4)]],
     })
    }
 
